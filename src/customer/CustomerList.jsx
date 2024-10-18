@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { CustomerContext } from './CustomerContext';
 import Alert from './Alert';
+import useAlert from './hooks/useAlert';
 
-const CustomerList = ({ customers, setHomeAlertText, setHomeAlertVisible }) => {
-  const [showCustomerAlert, setShowCustomerAlert] = useState(false);
+const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
+  const { customers } = useContext(CustomerContext);
+  const displayAlert = useAlert();
+
   const showHomeAlert = (timeout, text)=> {
     setHomeAlertText(text);
     setHomeAlertVisible(true);
@@ -10,15 +14,6 @@ const CustomerList = ({ customers, setHomeAlertText, setHomeAlertVisible }) => {
       setHomeAlertVisible(false);
     }, timeout);
   };
-
-  useEffect(() => {
-    if (customers.length > 0) {
-      setShowCustomerAlert(true);
-      setTimeout(() => {
-        setShowCustomerAlert(false);
-      }, 2000);
-    }
-  }, [customers])
 
   useEffect(() => {
     showHomeAlert(3000, "Welcome to the Client List")
@@ -29,7 +24,7 @@ const CustomerList = ({ customers, setHomeAlertText, setHomeAlertVisible }) => {
 
   return (
     <>
-      <Alert visible={showCustomerAlert} text={"New client has been added"}/>
+      <Alert visible={displayAlert} text={"New client has been added"}/>
       <ul className="customer-list">
         {
           customers.map(customer => {

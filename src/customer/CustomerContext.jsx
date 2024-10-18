@@ -1,9 +1,14 @@
-import { createContext } from 'react';
+import { useState, createContext } from 'react';
 
-const ClientContext = createContext();
+const CustomerContext = createContext();
 
-const ClientProvider = ({ children }) => {
-  // Context exercise 
+const CustomerProvider = ({ children }) => {
+  const [customers, setCustomers] = useState([]);
+  return (
+    <CustomerContext.Provider value={{ customers, setCustomers }}>
+      {children}
+    </CustomerContext.Provider>
+  );
 };
 
-export { ClientContext, ClientProvider };
+export { CustomerContext, CustomerProvider };
