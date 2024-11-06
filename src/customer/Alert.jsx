@@ -1,7 +1,9 @@
+import React from 'react';
+
 const Alert = ({ visible, text }) => {
-  const classNames = visible ? "visible" : "hidden"
+  if (!visible) return null;
   return (
-    <div className={"alert " + classNames}>
+    <div className="alert visible">
       <p>{text}</p>
     </div>
   );

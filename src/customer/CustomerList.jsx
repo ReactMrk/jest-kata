@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useContext } from 'react';
 import { CustomerContext } from './CustomerContext';
 import Alert from './Alert';

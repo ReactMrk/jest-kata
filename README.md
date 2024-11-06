@@ -1,19 +1,24 @@
-# **Client management with react and hooks**
-Once your merge request from the last kata was reviewed, a few improvements were suggested. These are refactors that will help make the app more scalable.
+# **Client management testing**
+Many developers will be working on this app simultaneously and a number of new functionalities will be added. We should create unit tests to make sure that no functionality is accidentally broken.
 
-Use correct node version: **nvm use**
+Use proper node version: **nvm use**
 
 Install dependencies: **npm install**
 
 Run app: **npm run dev**
 
-**Tips:** commented code is the skeleton to complete the exercises.
+**Exercise 1.**
 
-**Info:** it's not a problem that customers are lost when website is reloaded because in a future an API will be used to get them.
+Create a test for CustomerList component. The new tests should be a unit test, so the custom hook should be mocked.
 
-## Exercise 1
-First suggestion is about new customer alert. In a future, this alert will be resused on other components. In order to avoid the duplication of the useEffect, that handle this alert, in a future, could you refactor it to be a custom hook?
+As described in the file, you need to write a test to assert that an alert is rendered when the useAlert() custom hook returns true, and the alert is not rendered when the custom hook returns false.
 
-## Exercise 2
-Customer Management System is mind to be a large application, so in a future new react compoments related with customers will be added. Variables customer and setCustomer will be the parameters for these new react components. In order to avoid these variables being passed again and again from parent to children, principal engineer suggested you to create a context.
+In addition, a test should be added to assert that customers are being rendered.
 
+Use test file CustomerList.spec.js
+
+**Exercise 2.**
+
+Create a test for Client Management, components CustomerForm and CustomerList should be mocked. The first unit test should assert that CustomerForm and CustomerList are rendered by default. The second test should assert that CustomerForm and CustomerList are not rendered when button is clicked. 
+
+Use test file ClientManagement.spec.js
