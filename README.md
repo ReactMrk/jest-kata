@@ -39,3 +39,4 @@ Intellij config:
     Modify run configuration
     Change node interpreter to Node 20
 
+![Demo](https://github.com/ReactMrk/lifecycle-kata/blob/main/src/assets/hooks-kata-solution-kata.gif?raw=true)
