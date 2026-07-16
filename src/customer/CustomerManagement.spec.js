@@ -8,10 +8,9 @@ import CustomerManagement from './CustomerManagement';
 jest.mock('./CustomerForm', () => jest.fn());
 jest.mock('./CustomerList', () => jest.fn());
 
-const renderComponent = () => render(<CustomerManagement/>);
+const renderComponent = () => render(<CustomerManagement />);
 
-describe('Customer Management', (() => {
-
+describe('Customer Management', () => {
   beforeEach(() => {
     CustomerForm.mockImplementation(() => <div>Customer Form</div>);
     CustomerList.mockImplementation(() => <div>Customer List</div>);
@@ -42,4 +41,4 @@ describe('Customer Management', (() => {
       {}
     );
   });
-}));
+});

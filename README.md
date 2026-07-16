@@ -1,4 +1,5 @@
 # **Client management testing**
+
 Many developers will be working on this app simultaneously and a number of new functionalities will be added. We should create unit tests to make sure that no functionality is accidentally broken.
 
 Use proper node version: **nvm use**
@@ -19,23 +20,23 @@ Use test file CustomerList.spec.js
 
 **Exercise 2.**
 
-Create a test for Client Management, components CustomerForm and CustomerList should be mocked. The first unit test should assert that CustomerForm and CustomerList are rendered by default. The second test should assert that CustomerForm and CustomerList are not rendered when button is clicked. 
+Create a test for Client Management, components CustomerForm and CustomerList should be mocked. The first unit test should assert that CustomerForm and CustomerList are rendered by default. The second test should assert that CustomerForm and CustomerList are not rendered when button is clicked.
 
 Use test file ClientManagement.spec.js
-
 
 **Kata 4 common issues**
 
 Vscode config:
-  - Install extension: Jest Runner
-  - Issue with pnpm (vscode):
-    Go to Settings
-    Search for “jest” in the top bar or search in the left menu Extensions -> Jest-Runner Config
-    Remove any custom command in Jestrunner: Jest Command
 
-Intellij config: 
-  - Change node interpreter
-    Click right button on describe
-    Modify run configuration
-    Change node interpreter to Node 20
+- Install extension: Jest Runner
+- Issue with pnpm (vscode):
+  Go to Settings
+  Search for “jest” in the top bar or search in the left menu Extensions -> Jest-Runner Config
+  Remove any custom command in Jestrunner: Jest Command
 
+Intellij config:
+
+- Change node interpreter
+  Click right button on describe
+  Modify run configuration
+  Change node interpreter to Node 20

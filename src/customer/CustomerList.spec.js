@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useContext } from 'react';
 import { render, screen } from '@testing-library/react';
@@ -20,10 +19,11 @@ const customers = [
     phone: '77777777777',
     address: 'Watermark'
   }
-]
+];
 const setHomeAlertText = jest.fn();
 const setHomeAlertVisible = jest.fn();
-const renderComponent = () => render(<CustomerList setHomeAlertText={setHomeAlertText} setHomeAlertVisible={setHomeAlertVisible}/>);
+const renderComponent = () =>
+  render(<CustomerList setHomeAlertText={setHomeAlertText} setHomeAlertVisible={setHomeAlertVisible} />);
 describe('CustomerList', () => {
   beforeEach(() => {
     useContext.mockReturnValue({ customers });
@@ -49,12 +49,12 @@ describe('CustomerList', () => {
   });
 
   describe('Display client list', () => {
-    it('should display context clients',() => {
+    it('should display context clients', () => {
       renderComponent();
       expect(screen.getByText('Bob')).toBeInTheDocument();
       expect(screen.getByText(/bob@sky.uk/i)).toBeInTheDocument();
       expect(screen.getByText(/77777777777/i)).toBeInTheDocument();
       expect(screen.getByText(/Watermark/i)).toBeInTheDocument();
-    })
+    });
   });
 });

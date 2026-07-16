@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { CustomerContext } from '../CustomerContext'
+import { CustomerContext } from '../CustomerContext';
 
 const useAlert = () => {
   const [displayAlert, setDisplayAlert] = useState(false);
