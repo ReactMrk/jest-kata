@@ -10,7 +10,6 @@ jest.mock('react', () => ({
 
 // Hint 1: Mock useAlert using jest.mock(.....), so we can control its return value in tests
 
-
 const customers = [
   {
     name: 'Bob',
@@ -18,7 +17,7 @@ const customers = [
     phone: '77777777777',
     address: 'Watermark'
   }
-]
+];
 const setHomeAlertText = jest.fn();
 // Hint 2: create another mock function, for setHomeAlertVisible
 

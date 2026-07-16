@@ -1,5 +1,5 @@
 import './App.css';
-import CustomerManagement from "./customer/CustomerManagement";
+import CustomerManagement from './customer/CustomerManagement';
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
       <h1>Customer Management System</h1>
       <CustomerManagement />
     </div>
-  )
+  );
 };
 
-export default App
+export default App;
