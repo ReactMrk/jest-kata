@@ -13,7 +13,7 @@ const CustomerManagement = () => {
   };
   return (
     <>
-      <button onClick={handleLogin(loggedIn)}>{loggedIn ? 'Log out' : 'Log in'}</button>
+      <button type="submit" onClick={handleLogin(loggedIn)}>{loggedIn ? 'Log out' : 'Log in'}</button>
       <Alert visible={homeAlertVisible} text={homeAlertText} />
       {loggedIn && (
         <CustomerProvider>

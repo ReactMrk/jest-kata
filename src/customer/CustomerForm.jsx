@@ -80,8 +80,8 @@ const CustomerForm = () => {
         onChange={value => dispatchForm({ type: 'SET_ADDRESS', value: value.target.value })}
         value={form.address}
       />
-      <button onClick={() => submitCustomer()}>Add customer</button>
-      <button onClick={() => dispatchForm({ type: 'CLEAR' })}>Clear</button>
+      <button type="submit" onClick={() => submitCustomer()}>Add customer</button>
+      <button type="submit" onClick={() => dispatchForm({ type: 'CLEAR' })}>Clear</button>
     </div>
   );
 };
