@@ -1,10 +1,13 @@
-import React, { useState, createContext } from 'react';
+import React, {useState, createContext, useMemo} from 'react';
 
-const CustomerContext = createContext();
+export const CustomerContext = createContext(null);
 
-const CustomerProvider = ({ children }) => {
-  const [customers, setCustomers] = useState([]);
-  return <CustomerContext.Provider value={{ customers, setCustomers }}>{children}</CustomerContext.Provider>;
+export const CustomerProvider = ({children}) => {
+    const [customers, setCustomers] = useState([]);
+
+    const value = useMemo(() => ({
+        customers, setCustomers,
+    }), [customers]);
+
+    return <CustomerContext.Provider value={value}>{children}</CustomerContext.Provider>;
 };
-
-export { CustomerContext, CustomerProvider };

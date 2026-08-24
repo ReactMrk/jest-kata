@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { CustomerContext } from './CustomerContext';
 import Alert from './Alert';
 import useAlert from './hooks/useAlert';
