@@ -42,7 +42,7 @@ const reducer = (state, action) => {
 const CustomerForm = () => {
   const [form, dispatchForm] = useReducer(reducer, initalFormValue);
   const { setCustomers } = useContext(CustomerContext);
-  const submitEmployee = () => {
+  const submitCustomer = () => {
     setCustomers(prev => [
       ...prev,
       {
@@ -80,7 +80,7 @@ const CustomerForm = () => {
         onChange={value => dispatchForm({ type: 'SET_ADDRESS', value: value.target.value })}
         value={form.address}
       />
-      <button onClick={() => submitEmployee()}>Add customer</button>
+      <button onClick={() => submitCustomer()}>Add customer</button>
       <button onClick={() => dispatchForm({ type: 'CLEAR' })}>Clear</button>
     </div>
   );

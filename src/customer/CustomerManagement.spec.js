@@ -21,7 +21,7 @@ describe('Customer Management', () => {
   });
   it('should not render Customer Form and Customer list when log out', async () => {
     renderComponent();
-    userEvent.click(screen.getByRole('button', { name: 'Log out' }));
+    await userEvent.click(screen.getByRole('button', {name: 'Log out'}));
     await waitFor(() => {
       expect(screen.queryByText('Customer Form')).not.toBeInTheDocument();
       expect(screen.queryByText('Customer List')).not.toBeInTheDocument();
